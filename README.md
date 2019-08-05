@@ -1,0 +1,1 @@
+# magic_gome_strip_rgbw
