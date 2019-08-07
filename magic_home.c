@@ -28,10 +28,10 @@
 #define LPF_SHIFT 4  // divide by 16
 #define LPF_INTERVAL 10  // in milliseconds
 
-#define WHITE_PWM_PIN 13
-#define RED_PWM_PIN 5
-#define GREEN_PWM_PIN 14
-#define BLUE_PWM_PIN 12
+#define WHITE_PWM_PIN 15
+#define RED_PWM_PIN 12
+#define GREEN_PWM_PIN 5
+#define BLUE_PWM_PIN 13
 
 #define LED_RGB_SCALE 256       // this is the scaling factor used for color conversion
 
@@ -180,10 +180,10 @@ homekit_accessory_t *accessories[] = {
     HOMEKIT_ACCESSORY(.id = 1, .category = homekit_accessory_category_lightbulb, .services = (homekit_service_t*[]) {
         HOMEKIT_SERVICE(ACCESSORY_INFORMATION, .characteristics = (homekit_characteristic_t*[]) {
             &name,
-            HOMEKIT_CHARACTERISTIC(MANUFACTURER, "PA7T"),
-            HOMEKIT_CHARACTERISTIC(SERIAL_NUMBER, "12354345465"),
+            HOMEKIT_CHARACTERISTIC(MANUFACTURER, "DL2ZZ"),
+            HOMEKIT_CHARACTERISTIC(SERIAL_NUMBER, "7001"),
             HOMEKIT_CHARACTERISTIC(MODEL, "Magic Home Led Strip RGBW"),
-            HOMEKIT_CHARACTERISTIC(FIRMWARE_REVISION, "0.1"),
+            HOMEKIT_CHARACTERISTIC(FIRMWARE_REVISION, "1.0"),
             HOMEKIT_CHARACTERISTIC(IDENTIFY, led_identify),
             NULL
         }),
@@ -218,8 +218,8 @@ homekit_accessory_t *accessories[] = {
 
 homekit_server_config_t config = {
     .accessories = accessories,
-    .password = "111-111-111",    //changed tobe valid
-    // .setupId = ""
+    .password = "111-11-111",    //changed tobe valid
+    .setupId = "1AA1"
 };
 
 IRAM void multipwm_task(void *pvParameters) {
